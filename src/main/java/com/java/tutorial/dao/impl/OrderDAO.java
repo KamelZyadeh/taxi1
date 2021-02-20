@@ -115,17 +115,19 @@ public class OrderDAO extends DAO<Order> {
         } return null;
     }
 
-    public Order selectUnfinishedOrders(long id, OrderStatus orderStatus) throws DAOException {
+    public List<Order> selectUnfinishedOrders(long id, OrderStatus orderStatus) throws DAOException {
+        List<Order> orderList = new ArrayList<>();
         try (PreparedStatement preparedStatement = connection.prepareStatement(SELECT_UNFINISHED_ORDERS)){
             preparedStatement.setLong(1, id);
             preparedStatement.setString(2, String.valueOf(orderStatus));
             ResultSet resultSet = preparedStatement.executeQuery();
-            if (resultSet.next()) {
-                return selection(resultSet);
-            } return null;
+            while (resultSet.next()) {
+                Order order = selection(resultSet);
+                orderList.add(order);
+            }
         } catch (SQLException e) {
             throw new DAOException("cant select unfinished orders in dao");
-        }
+        } return orderList;
     }
 
     public List<Order> selectFinishedOrders(OrderStatus orderStatus) throws DAOException {

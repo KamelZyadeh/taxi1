@@ -41,6 +41,11 @@ public class CommandFactory {
             case "logout":
                 System.out.println("logout");
                 return new AccountLogout(new AccountService());
+
+            case "nearest_taxi_command":
+                System.out.println("nearest_taxi_command");
+                return new nearestTaxiCommand(new OrderService());
+
             default:return null;
         }
     }

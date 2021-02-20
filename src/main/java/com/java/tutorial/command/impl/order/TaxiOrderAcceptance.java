@@ -85,31 +85,4 @@ public class TaxiOrderAcceptance implements Command {
         return page;
 
     }
-
-//    public void nearestTaxiSorting(Location s, List<Order> ll) throws ServiceException {
-//        double client = s.getLat() + s.getLng();
-//        Order[] orderArray = new Order[ll.size()];
-//        orderArray = (Order[]) ll.toArray();
-//        double temp = 0;
-//        double total;
-//
-//        for (int i = 0; i >= orderArray.length; i++){
-//            Order order = orderArray[i];
-//            Location location = locationService.readById();
-//            double taxi = location.getLat() + location.getLng();
-//
-//            total = client - taxi;
-//            if (temp == 0) {
-//                temp = total;
-//            }
-//            if (temp != total) {
-//                if (temp > total) {
-//                    temp = total;
-//                } else {
-//                    orderArray[orderArray.length - 1] = order;
-//                }
-//            }
-//        }
-//        orderList = Arrays.asList(orderArray);
-//    }
 }

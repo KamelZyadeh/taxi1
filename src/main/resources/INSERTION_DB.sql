@@ -35,6 +35,3 @@ INSERT INTO client_orders
 VALUES
 (1, 4),
 (2, 4);
-
-
-

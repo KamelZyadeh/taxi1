@@ -26,16 +26,7 @@
         </c:if>
         <c:if test="${sessionScope.account.type == 'CLIENT'}">
 
-            <form action="${pageContext.request.contextPath}/taxi" method="post">
-
-                <a href="client_orders.jsp" type="submit">fuck</a>
-
-                <input type="hidden" name="command" value="command_create_location">
-
-<%--                <div>--%>
-<%--                    <input type="submit" name="location" value="Order">--%>
-<%--                </div>--%>
-            </form>
+            <a href="client_orders.jsp">fuck</a>
 
             <form action="${pageContext.request.contextPath}/taxi" method="post">
                 <div>

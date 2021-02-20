@@ -84,7 +84,7 @@ public class OrderService extends CRUDService<Order> {
         }
     }
 
-    public Order readUnfinishedOrders(long id, OrderStatus orderStatus) throws ServiceException {
+    public List<Order> readUnfinishedOrders(long id, OrderStatus orderStatus) throws ServiceException {
         try {
             return orderDAO.selectUnfinishedOrders(id, orderStatus);
         } catch (DAOException e) {
